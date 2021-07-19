@@ -110,10 +110,29 @@ body{
 
 .addPasswordSubmit{
   border: 2px solid rgb(1, 174, 208);
-  border-radius: 50%;
+  border-radius: 30%;
 
-  height: 65px;
-  width: 65px;
+  height: 50px;
+  width: 80px;
+
+  color: rgb(1, 174, 208);
+  font-size: 1em;
+
+  align-self: flex-end;
+}
+
+.showPasswordContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#savePassword{
+  border: 2px solid rgb(1, 174, 208);
+  border-radius: 30%;
+
+  height: 50px;
+  width: 80px;
 
   color: rgb(1, 174, 208);
   font-size: 1em;

@@ -41,7 +41,7 @@ export default function AddPasswordPageForm(props){
       <input
         type="submit"
         className="addPasswordSubmit"
-        value="Add"
+        value="Generate"
         onClick={(e)=>{props.onAddClick(e);}}
       ></input>
     </form>

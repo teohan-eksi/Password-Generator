@@ -36,10 +36,14 @@ function AddPasswordPage(props){
     }else{
       //get a password and show it to the user discretely.
       setUserGeneratedPassword(giveMeAPsw(passwordValues.passwordKey));
-      
+
       //to call the function in ShowPasswordInAddPassword child component
       setAddClicked(true);
     }
+  }
+
+  function onSaveClick() {
+    console.log("save button clicked in the child");
   }
 
   if(props.isShown){
@@ -62,6 +66,8 @@ function AddPasswordPage(props){
           setAddClicked={setAddClicked}
 
           userGeneratedPassword={userGeneratedPassword}
+
+          onSaveClick={onSaveClick}
         />
       </div>
     );
