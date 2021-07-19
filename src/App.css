@@ -1,0 +1,122 @@
+
+
+
+body{
+    margin: 0;
+
+    --bg-color: rgb(236, 246, 248);
+    background-color: var(--bg-color);
+
+    --text-color: rgb(6,43,50);
+    color: var(--text-color);
+}
+
+.headerBar{
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
+
+  height: 80px;
+
+  --header-bg-color: rgb(1, 174, 208);
+  background-color: var(--header-bg-color);
+
+  color: var(--bg-color);
+}
+
+.backArrow{
+  /* TODO: make this prettier */
+  flex-grow: 2.5;
+
+  background-color: var(--header-bg-color);
+  color: #fff;
+  font-size: 1.5em;
+
+  border: 0;
+  border-right: 2px solid var(--bg-color);
+
+}
+
+.headerTitle{
+  flex-grow: 5;
+  align-self: center;
+
+  font-size: 1.75em;
+}
+
+.optionsButton{
+  flex-grow: 2.5;
+
+  background-color: var(--header-bg-color);
+  color:var(--bg-color);
+  font-size: 1.5em;
+
+  border: 0;
+  border-left: 2px solid var(--bg-color);
+}
+
+.addPasswordBtn {
+  /* TODO: make this prettier */
+  position: fixed;
+  bottom: 8%;
+  right: 8%;
+
+  background-color: rgba(236, 246, 248, 0.5);
+
+  --button-text-color: rgb(1, 174, 208);
+  color: var(--button-text-color);
+
+  font-size: 4em;
+
+  width: 85px;
+  height: 80px;
+
+  border: 2px solid var(--button-text-color);
+  border-radius: 50%;
+
+  /* it's vertically aligned like that.
+   * 2px + 81px + 2px = height = width = 85px */
+  padding: 0 0 81px 0;
+}
+
+.addPasswordContainer{
+  padding: 4%;
+}
+
+.addPasswordForm{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  border-bottom: 3px solid rgb(1, 174, 208);
+  padding-bottom: 1em;
+}
+
+.addPasswordTitle{
+  font-size: 1.25em;
+}
+
+.addPasswordKey{
+  font-size: 1.25em;
+}
+
+.addPasswordInput{
+  font-size: 1em;
+  height: 1.25em;
+  margin: 0.25em 0 0.5em 0;
+}
+
+.addPasswordSubmit{
+  border: 2px solid rgb(1, 174, 208);
+  border-radius: 50%;
+
+  height: 65px;
+  width: 65px;
+
+  color: rgb(1, 174, 208);
+  font-size: 1em;
+
+  align-self: flex-end;
+}
