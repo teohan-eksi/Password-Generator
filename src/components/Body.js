@@ -35,15 +35,16 @@ class Body extends React.Component{
     return (
       <div className="body">
         <Passwords
-          //send the controller variable to show the content
+          //control the render of the content inside Passwords component
           isShown = {this.state.isPasswordsShown}
+
           //pass the setHeaderTitle function down the hierarchy
-          //if a password key is chosen, its title will be the header title.
+          //if a password title is chosen, its value will be the header title.
           changeHeaderTitle={this.props.changeHeaderTitle}
         />
         <AddPasswordButton
-          //send the controller variable to show, or not, the content
           isShown = {this.state.isAddPasswordButtonShown}
+
           //if this button is clicked, some components shouldn't be shown.
           //So, change the state of what's shown and not,
           //then, React will take care of the render part.
@@ -52,8 +53,10 @@ class Body extends React.Component{
         />
         <AddPasswordPage
           isShown = {this.state.isAddPasswordPageShown}
+
           //change header title to "Add Password"
           changeHeaderTitle = {this.props.changeHeaderTitle}
+
           //show back arrow on the required page
           setBackArrowShown = {this.props.setBackArrowShown}
         />

@@ -8,15 +8,11 @@ import Body from './components/Body.js';
 import './App.css';
 
 function App() {
-  //set the initial state for the header title.
-  //when the page context changes in the body component,
-  //the active page will call setHeaderTitle function to change
-  //the header title from its own scope.
-  //Header compenent will change the title after the variable changes.
+  //set the initial value for the header title.
   const [headerTitle, setHeaderTitle] = useState("Password Manager");
 
   //set the initial state for the back arrow visibility.
-  //it's not shown in the home screen at the app start.
+  //naturally, it's not shown in the home screen at the start.
   const [isBackArrowShown, setBackArrowShown] = useState(false);
 
   //when back arrow is clicked on a page,
@@ -46,20 +42,18 @@ function App() {
   return (
     <div className="App">
       <Header
-        //show the back arrow according to the control parameter.
         isBackArrowShown = {isBackArrowShown}
+
         //call backArrowClicked function when it's clicked.
         backArrowClicked = {backArrowClicked}
-        //show header title
+
         headerTitle={headerTitle}
         />
       <Body
         ref={childBodyRef}
-        //control whether the back arrow shown or not according to
-        //the body context.
+
         setBackArrowShown = {setBackArrowShown}
-        //change header title according to the body context,
-        //if a page transition occurs.
+
         changeHeaderTitle={setHeaderTitle}
       />
     </div>

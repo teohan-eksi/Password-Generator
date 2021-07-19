@@ -7,6 +7,7 @@ import ShowPasswordInAddPassword from './ShowPasswordInAddPassword.js';
 import giveMeAPsw from '../passwordGenerator.js';
 
 function AddPasswordPage(props){
+  //the key is used in the seed to generate a random password
   const [passwordValues, setPasswordValues] = useState({
     passwordTitle: "",
     passwordKey: ""
@@ -27,12 +28,11 @@ function AddPasswordPage(props){
   const [addClicked, setAddClicked] = useState(false);
   function onAddClick(e) {
     e.preventDefault();
-    console.log("onAddClick");
 
     //if password title or key is empty stop the flow.
     if(passwordValues.passwordTitle === "" ||
       passwordValues.passwordKey === ""){
-        console.log("Fill out stuff");
+        console.log("Fill out the fields");
     }else{
       //get a password and show it to the user discretely.
       setUserGeneratedPassword(giveMeAPsw(passwordValues.passwordKey));
@@ -43,7 +43,8 @@ function AddPasswordPage(props){
   }
 
   function onSaveClick() {
-    console.log("save button clicked in the child");
+    console.log(userGeneratedPassword);
+
   }
 
   if(props.isShown){
@@ -58,8 +59,10 @@ function AddPasswordPage(props){
         <ShowPasswordInAddPassword
           /*reflect the input form values in real time to the user*/
           passwordValues={passwordValues}
+
           /*to clean the input forms after adding them. */
           setPasswordValues={setPasswordValues}
+
           /*Probably a cheap hack to call a function in a child component
            *But it workssss.*/
           addClicked={addClicked}
