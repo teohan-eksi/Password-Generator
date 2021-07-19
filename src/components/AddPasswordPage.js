@@ -3,13 +3,16 @@
 
 import React, { useEffect, useState } from 'react';
 import AddPasswordPageForm from './AddPasswordPageForm.js';
-import ShowPasswordInAddPassword from './ShowPasswordInAddPassword.js'
+import ShowPasswordInAddPassword from './ShowPasswordInAddPassword.js';
+import giveMeAPsw from '../passwordGenerator.js';
 
 function AddPasswordPage(props){
   const [passwordValues, setPasswordValues] = useState({
     passwordTitle: "",
     passwordKey: ""
   });
+
+  const [userGeneratedPassword, setUserGeneratedPassword] = useState(null);
 
   //change title and show back arrow
   useEffect(()=>{
@@ -31,7 +34,9 @@ function AddPasswordPage(props){
       passwordValues.passwordKey === ""){
         console.log("Fill out stuff");
     }else{
-            
+      //get a password and show it to the user discretely.
+      setUserGeneratedPassword(giveMeAPsw(passwordValues.passwordKey));
+      
       //to call the function in ShowPasswordInAddPassword child component
       setAddClicked(true);
     }
@@ -55,6 +60,8 @@ function AddPasswordPage(props){
            *But it workssss.*/
           addClicked={addClicked}
           setAddClicked={setAddClicked}
+
+          userGeneratedPassword={userGeneratedPassword}
         />
       </div>
     );

@@ -14,13 +14,13 @@ export default function ShowWorkoutInAddWorkout(props) {
 
       //clean the current inputs.
       //this clears the showing area below
-      props.setPasswordValues({
+      /*props.setPasswordValues({
         passwordTitle: "",
         passwordKey: ""
-      });
+      });*/
 
       //this clears the input forms.
-      setCleanInputForms(true);
+      //setCleanInputForms(true);
 
       props.setAddClicked(false);
     }
@@ -41,6 +41,7 @@ export default function ShowWorkoutInAddWorkout(props) {
       </p>
 
       <p className="ShowPassword">
+        {props.userGeneratedPassword}
       </p>
     </div>
   );
