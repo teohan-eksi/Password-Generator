@@ -71,6 +71,8 @@ function AddPasswordPage(props){
           userGeneratedPassword={userGeneratedPassword}
 
           onSaveClick={onSaveClick}
+
+          changeShownState = {props.changeShownState}
         />
       </div>
     );

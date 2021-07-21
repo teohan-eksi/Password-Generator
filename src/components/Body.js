@@ -6,6 +6,8 @@ import Passwords from './Passwords.js';
 import AddPasswordButton from './AddPasswordButton.js';
 import AddPasswordPage from './AddPasswordPage.js';
 
+
+
 class Body extends React.Component{
   constructor(props){
     super(props);
@@ -16,7 +18,9 @@ class Body extends React.Component{
       isPasswordsShown: true,
       isAddPasswordButtonShown: true,
       isAddPasswordPageShown: false,
-      previousPages: [""]
+      previousPages: [""],
+      passwordTitle: "",
+      psw: ""
     };
 
     this.changeShownState = this.changeShownState.bind(this);
@@ -38,9 +42,8 @@ class Body extends React.Component{
           //control the render of the content inside Passwords component
           isShown = {this.state.isPasswordsShown}
 
-          //pass the setHeaderTitle function down the hierarchy
-          //if a password title is chosen, its value will be the header title.
-          changeHeaderTitle={this.props.changeHeaderTitle}
+          passwordTitle = {this.state.passwordTitle}
+          psw = {this.state.psw}
         />
         <AddPasswordButton
           isShown = {this.state.isAddPasswordButtonShown}
@@ -59,6 +62,8 @@ class Body extends React.Component{
 
           //show back arrow on the required page
           setBackArrowShown = {this.props.setBackArrowShown}
+
+          changeShownState = {this.changeShownState}
         />
       </div>
     );

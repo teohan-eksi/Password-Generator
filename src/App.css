@@ -139,3 +139,7 @@ body{
 
   align-self: flex-end;
 }
+
+.passwordsContainer{
+  padding: 0 4% 0 4%;
+}

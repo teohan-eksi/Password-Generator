@@ -11,7 +11,6 @@ export default function ShowWorkoutInAddWorkout(props) {
   useEffect(()=>{
     //this function is called from the parent.
     if(props.addClicked){
-      console.log("addClicked in Child");
       setIsShown(true);
       setShowPassword(props.userGeneratedPassword);
 
@@ -30,6 +29,11 @@ export default function ShowWorkoutInAddWorkout(props) {
   function onSaveClick(e) {
     e.preventDefault();
     console.log("save click");
+
+    props.changeShownState({
+      passwordTitle: props.passwordValues.passwordTitle,
+      psw: props.userGeneratedPassword
+    });
 
     //clean the current input fields.
     //this clears the showing area below
