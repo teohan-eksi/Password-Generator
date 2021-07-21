@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   //set the initial value for the header title.
-  const [headerTitle, setHeaderTitle] = useState("Password Manager");
+  const [headerTitle, setHeaderTitle] = useState("Password Generator");
 
   //set the initial state for the back arrow visibility.
   //naturally, it's not shown in the home screen at the start.
@@ -27,7 +27,7 @@ function App() {
     const previousPage = childBodyRef.current.state.previousPages.pop();
     if(previousPage === "home"){
       setBackArrowShown(false);
-      setHeaderTitle("Password Manager");
+      setHeaderTitle("Password Generator");
       //bring back home page states and let the React do the rest.
       childBodyRef.current.changeShownState({
         activePage: "home",
